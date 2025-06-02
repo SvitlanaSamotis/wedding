@@ -2,135 +2,146 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Світлана & Данило</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         background: url("CleanShot 2025-05-26 at 11.54.37@2x.png")
           no-repeat center center fixed;
         background-size: cover;
         color: #000;
-        font-family: "Playfair Display", serif;
+        font-family: "Roboto", sans-serif;
         margin: 0;
         padding: 0;
       }
       .content-wrapper {
         max-width: 700px;
-        margin: 0 auto;
-        background-color: rgba(
-          255,
-          255,
-          255,
-          0.8
-        );
-        padding: 30px 20px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin: 50px auto;
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 50px 30px;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1.5s ease;
       }
       .section {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
       }
       h1 {
-        font-size: 2.5em;
+        font-family: "Playfair Display", serif;
+        font-size: 2.8em;
         font-weight: 700;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
       }
       h2 {
-        font-size: 1.3em;
+        font-family: "Playfair Display", serif;
+        font-size: 1.5em;
         font-weight: 400;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
       }
       .info p {
-        margin: 6px 0;
-        font-size: 1.05em;
+        margin: 8px 0;
+        font-size: 1.1em;
+        line-height: 1.7;
       }
       .info a {
         color: inherit;
         text-decoration: none;
+        border-bottom: 1px dotted #b56b95;
       }
       .info a:hover {
         text-decoration: underline;
       }
       .image-preview {
         width: 100%;
-        margin: 20px 0;
+        margin: 30px 0;
         display: block;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .image-preview:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
       }
       .countdown-title {
-        font-size: 1.2em;
+        font-size: 1.3em;
         font-weight: bold;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
       }
       .countdown {
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: 25px;
         font-size: 1.2em;
       }
       .countdown-item {
         background: #000;
         color: #fff;
-        padding: 10px;
-        min-width: 60px;
-        border-radius: 8px;
+        padding: 14px 12px;
+        min-width: 70px;
+        border-radius: 12px;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
       .count-label {
-        font-size: 0.7em;
-        margin-top: 5px;
+        font-size: 0.8em;
+        margin-top: 6px;
         color: #ccc;
-      }
-      .timeline ul,
-      .tips ul {
-        list-style: none;
-        padding: 0;
-        font-size: 1.05em;
-        margin-top: 10px;
-        text-align: left;
-      }
-      .timeline li,
-      .tips li {
-        margin-bottom: 6px;
       }
       .rsvp-button {
         display: inline-block;
-        background: #000;
+        background: #b56b95;
         color: #fff;
-        padding: 12px 24px;
-        font-size: 1em;
+        padding: 14px 28px;
+        font-size: 1.1em;
         text-decoration: none;
-        border-radius: 6px;
+        border-radius: 8px;
         margin-top: 20px;
+        transition: background 0.3s ease;
       }
       .rsvp-button:hover {
-        background: #444;
+        background: #9c5e7f;
       }
       .footer {
-        margin-top: 30px;
+        margin-top: 40px;
         font-style: italic;
-        color: #333;
+        color: #555;
+        font-size: 1em;
+        line-height: 1.7;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       @media (max-width: 600px) {
         h1 {
-          font-size: 2em;
+          font-size: 2.2em;
         }
         h2 {
-          font-size: 1.1em;
+          font-size: 1.3em;
         }
         .countdown {
           flex-direction: column;
-          gap: 10px;
+          gap: 12px;
+        }
+        .rsvp-button {
+          display: block;
+          margin: 20px auto 0;
         }
       }
     </style>
@@ -139,46 +150,28 @@
     <div class="content-wrapper">
       <section class="section hero">
         <h1>💍 Світлана & Данило</h1>
-        <h2>
-          запрошують вас на особливу подію 💕
-        </h2>
+        <h2>запрошують вас на особливу подію 💕</h2>
       </section>
 
       <section class="section info">
+        <p><strong>Дата:</strong> 19 Липня 2025</p>
+        <p><strong>Час:</strong> 15:00</p>
         <p>
-          <strong> Дата:</strong> 19 Липня 2025
-        </p>
-        <p><strong> Час:</strong> 14:00</p>
-        <p>
-          <strong> Місце:</strong>
-          <a
-            href="https://maps.app.goo.gl/HyHmLWaKMkXBACr49"
-            target="_blank"
+          <strong>Місце:</strong>
+          <a href="https://maps.app.goo.gl/HyHmLWaKMkXBACr49" target="_blank"
             >Ранчо "Скарбова Гора"</a
           >
         </p>
-        <p>
-          <strong> Дрес-код:</strong> Вишиванки та
-          зручне взуття
-        </p>
-        <p>
-          <strong> Особливості:</strong>
-          Святкування відбудеться на природі
-        </p>
+        <p><strong>Дрес-код:</strong> Вишиванки та зручне взуття</p>
+        <p><strong>Особливості:</strong> Святкування відбудеться на природі</p>
       </section>
 
       <section class="section">
-        <img
-          src="DSC_6160.jpg"
-          alt="Ми разом"
-          class="image-preview"
-        />
+        <img src="DSC_6160.jpg" alt="Ми разом" class="image-preview" />
       </section>
 
       <section class="section">
-        <div class="countdown-title">
-          До великого дня залишилося:
-        </div>
+        <div class="countdown-title">До великого дня залишилося:</div>
         <div class="countdown">
           <div class="countdown-item">
             <div id="days">00</div>
@@ -206,76 +199,41 @@
           target="_blank"
           >📨 Підтвердити присутність</a
         >
-        <p>
-          <strong>
-            Будь ласка, підтвердьте присутність до
-            1 липня</strong
-          >
-        </p>
+        <p><strong>Будь ласка, підтвердьте присутність до 1 липня</strong></p>
       </section>
 
       <section class="section footer">
         <p>
-          💖 Ми з нетерпінням чекаємо святкування
-          цього особливого дня разом з вами! 💖
+          💖 Ми з нетерпінням чекаємо святкування цього особливого дня разом з вами! 💖
         </p>
       </section>
     </div>
 
     <script>
-      const daysEl =
-        document.getElementById("days");
-      const hoursEl =
-        document.getElementById("hours");
-      const minutesEl =
-        document.getElementById("minutes");
-      const secondsEl =
-        document.getElementById("seconds");
+      const daysEl = document.getElementById("days");
+      const hoursEl = document.getElementById("hours");
+      const minutesEl = document.getElementById("minutes");
+      const secondsEl = document.getElementById("seconds");
 
       function updateCountdown() {
-        const weddingDate = new Date(
-          "July 19, 2025 16:00:00"
-        ).getTime();
+        const weddingDate = new Date("July 19, 2025 16:00:00").getTime();
         const now = new Date().getTime();
         const distance = weddingDate - now;
 
         if (distance < 0) {
-          daysEl.innerText =
-            hoursEl.innerText =
-            minutesEl.innerText =
-            secondsEl.innerText =
-              "00";
+          daysEl.innerText = hoursEl.innerText = minutesEl.innerText = secondsEl.innerText = "00";
           return;
         }
 
-        const days = Math.floor(
-          distance / (1000 * 60 * 60 * 24)
-        );
-        const hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) /
-            (1000 * 60 * 60)
-        );
-        const minutes = Math.floor(
-          (distance % (1000 * 60 * 60)) /
-            (1000 * 60)
-        );
-        const seconds = Math.floor(
-          (distance % (1000 * 60)) / 1000
-        );
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        daysEl.innerText = String(days).padStart(
-          2,
-          "0"
-        );
-        hoursEl.innerText = String(
-          hours
-        ).padStart(2, "0");
-        minutesEl.innerText = String(
-          minutes
-        ).padStart(2, "0");
-        secondsEl.innerText = String(
-          seconds
-        ).padStart(2, "0");
+        daysEl.innerText = String(days).padStart(2, "0");
+        hoursEl.innerText = String(hours).padStart(2, "0");
+        minutesEl.innerText = String(minutes).padStart(2, "0");
+        secondsEl.innerText = String(seconds).padStart(2, "0");
       }
 
       updateCountdown();
