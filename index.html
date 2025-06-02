@@ -193,13 +193,21 @@
         h3 {
           font-size: 1.5rem;
         }
-        .countdown {
-          flex-direction: column;
-          gap: 20px;
-        }
-        .countdown-divider {
-          display: none;
-        }
+      .countdown {
+    flex-wrap: wrap; /* дозволити переносити, але залишити рядочком */
+    gap: 20px;
+    justify-content: center; /* центровані */
+  }
+
+  /* НЕ треба flex-direction: column тут! */
+
+  .countdown-divider {
+    display: none; /* можна залишити, щоб на дуже вузьких телефонах забрати лінії */
+  }
+
+  .countdown-item div:first-child {
+    font-size: 2rem;
+  }
         .buttons-container {
           flex-direction: column;
         }
