@@ -22,11 +22,11 @@
           no-repeat center center fixed;
         background-size: cover;
         font-family: "Roboto", sans-serif;
-        color: #f7f5f2;
+        color: #fefefe;
         position: relative;
         overflow-x: hidden;
       }
-      /* Блок затемнення */
+      /* Світлий overlay (теплий відтінок на фон) */
       .background-overlay {
         position: fixed;
         top: 0;
@@ -34,46 +34,57 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(
-          rgba(20, 20, 20, 0.6),
-          /* темний зверху */
-            rgba(245, 240, 230, 0.4)
-            /* теплий пастельний вниз */
+          rgba(255, 255, 255, 0.2),
+          rgba(245, 240, 230, 0.4)
         );
         z-index: 0;
       }
+      /* Темна підкладка для тексту через всю сторінку */
+      .global-text-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(30, 30, 30, 0.4) 0%,
+          rgba(30, 30, 30, 0.6) 100%
+        );
+        z-index: 1;
+      }
       .content-wrapper {
         position: relative;
-        z-index: 1;
+        z-index: 2; /* Контент зверху */
         max-width: 1000px;
         margin: 80px auto;
         padding: 0 30px;
         text-align: center;
       }
-      h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 3rem;
-        margin-bottom: 20px;
-        color: #f7f5f2;
-      }
-      h2 {
-        font-family: "Playfair Display", serif;
-        font-size: 1.75rem;
-        font-weight: 400;
-        margin-bottom: 50px;
-        color: #eae5dc;
-      }
+      h1,
+      h2,
       h3 {
         font-family: "Playfair Display", serif;
+        margin-bottom: 20px;
+        color: #fefefe;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      h2 {
+        font-size: 1.75rem;
+        font-weight: 400;
+        margin-bottom: 30px;
+      }
+      h3 {
         font-size: 2rem;
         margin-bottom: 20px;
-        color: #f7f5f2;
       }
       .divider {
         width: 60px;
         height: 2px;
         background: #6b8e23;
         margin: 40px auto;
-        border-radius: 2px;
       }
       .hero-image {
         width: 100%;
@@ -82,12 +93,13 @@
         border-radius: 16px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         display: block;
+        position: relative;
+        z-index: 2; /* Фото поверх фону */
       }
       .before-countdown {
         font-size: 1.5rem;
         margin: 40px 0 20px 0;
         font-family: "Playfair Display", serif;
-        color: #f7f5f2;
       }
       .countdown {
         display: flex;
@@ -104,9 +116,7 @@
       }
       .countdown-item div:first-child {
         font-size: 2.5rem;
-        font-family: "Playfair Display", serif;
         font-weight: 500;
-        color: #f7f5f2;
       }
       .countdown-item div:last-child {
         font-size: 1rem;
@@ -119,9 +129,6 @@
         width: 1px;
         background-color: #aaa;
       }
-      .section {
-        margin: 60px 0;
-      }
       .description,
       .details,
       .travel {
@@ -130,7 +137,6 @@
         line-height: 1.7;
         max-width: 700px;
         margin: 0 auto 40px auto;
-        color: #f0f0f0;
       }
       .details-block {
         margin-bottom: 25px;
@@ -139,11 +145,8 @@
         display: block;
         margin-top: 5px;
         font-size: 1.25rem;
-        color: #f7f5f2;
         font-weight: 400;
       }
-
-      /* КНОПКИ */
       .buttons-container {
         margin: 40px 0;
         display: flex;
@@ -163,22 +166,21 @@
         display: inline-block;
       }
       .rsvp-button {
-        background-color: #6d7b68; /* глибокий приглушений оливковий */
+        background-color: #6d7b68;
         color: #fff;
       }
       .rsvp-button:hover {
-        background-color: #5a6655; /* темніше при наведенні */
+        background-color: #5a6655;
       }
-
       .calendar-button {
-        background-color: #c4b7a6; /* спокійний бежево-золотистий */
+        background-color: #c4b7a6;
         color: #3d3d3d;
       }
       .calendar-button:hover {
-        background-color: #b0a08c; /* темніше при наведенні */
+        background-color: #b0a08c;
       }
       a {
-        color: #eae5dc;
+        color: #fefefe;
         text-decoration: underline;
       }
       @media (max-width: 768px) {
@@ -202,11 +204,87 @@
           flex-direction: column;
         }
       }
+      @media (max-width: 768px) {
+        .content-wrapper {
+          margin: 40px 20px; /* менші відступи */
+          padding: 0 15px;
+        }
+        h1 {
+          font-size: 2.2rem;
+          line-height: 1.2;
+        }
+        h2 {
+          font-size: 1.4rem;
+          margin-bottom: 20px;
+        }
+        h3 {
+          font-size: 1.6rem;
+          margin-bottom: 16px;
+        }
+        .hero-image {
+          width: 100%;
+          max-width: 90%; /* трошки менше зображення */
+          margin: 30px auto;
+        }
+        .description,
+        .details,
+        .travel {
+          font-size: 1rem;
+          line-height: 1.6;
+          padding: 0 10px;
+        }
+        .countdown {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .countdown-divider {
+          display: none; /* Прибрати вертикальні лінії на мобільних */
+        }
+        .countdown-item div:first-child {
+          font-size: 2rem;
+        }
+        .buttons-container {
+          flex-direction: column;
+          gap: 15px;
+        }
+        .button {
+          width: 100%;
+          padding: 12px 0;
+          font-size: 1.1rem;
+        }
+        .divider {
+          margin: 30px auto;
+        }
+      }
+
+      /* Додатково адаптуємо для дуже маленьких екранів */
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2rem;
+        }
+        h2 {
+          font-size: 1.2rem;
+        }
+        h3 {
+          font-size: 1.4rem;
+        }
+        .description,
+        .details,
+        .travel {
+          font-size: 0.95rem;
+        }
+        .button {
+          font-size: 1rem;
+        }
+      }
     </style>
   </head>
   <body>
+    <!-- Світле напівпрозоре світле затемнення -->
     <div class="background-overlay"></div>
-    <!-- Темніший верх + теплий низ -->
+
+    <!-- Темна підкладка на весь екран -->
+    <div class="global-text-background"></div>
 
     <div class="content-wrapper">
       <h1>Світлана & Данило</h1>
@@ -215,11 +293,111 @@
         свята
       </h2>
 
+      <div class="divider"></div>
+
+      <div class="section">
+        <h3>Про свято</h3>
+        <div class="description">
+          У часи, коли кожна мить разом має
+          особливу цінність, ми хочемо зібрати
+          найближчих під відкритим небом, серед
+          природи, щоб подарувати трохи тепла і
+          радості. Ми обрали святкувати цей день
+          просто і по-своєму — без зайвих
+          умовностей, але з великою любов’ю і
+          теплом сердець.
+          <br />
+          Нехай цей день стане не лише святом для
+          нас, а й маленькою паузою для кожного з
+          вас — моментом щирості, затишку й
+          радості серед тривожного світу.
+        </div>
+      </div>
+      <div class="divider"></div>
       <img
-        src="DSC_6160.jpg"
+        src="photo.png"
         alt="Ми разом"
         class="hero-image"
       />
+      <div class="divider"></div>
+
+      <div class="section">
+        <h3>Деталі свята</h3>
+        <div class="details">
+          <div class="details-block">
+            <div>Коли?</div>
+            <strong>19 Липня 2025, 15:00</strong>
+          </div>
+          <div class="details-block">
+            <div>Де?</div>
+            <strong
+              ><a
+                href="https://maps.app.goo.gl/HyHmLWaKMkXBACr49"
+                target="_blank"
+                >Ранчо "Скарбова Гора"</a
+              ></strong
+            >
+            <img
+              src="background2.png"
+              alt="Ми разом"
+              class="hero-image"
+            />
+          </div>
+          <div class="details-block">
+            <div>Дрес-код?</div>
+            <strong
+              >Обов'язково вишиванки та зручне
+              взуття*
+            </strong>
+            <div
+              style="
+                margin-top: 10px;
+                color: #cccccc;
+                font-size: 1rem;
+              "
+            >
+              Ми б дуже хотіли, щоб кожен гість
+              був у своїй найкращій вишиванці.
+            </div>
+            <img
+              src="background3.png"
+              alt="Ми разом"
+              class="hero-image"
+            />
+          </div>
+
+          <div class="details-block">
+            <div>Подарунки?</div>
+            <div
+              style="
+                margin-top: 10px;
+                color: #cccccc;
+                font-size: 1rem;
+              "
+            >
+              Найкраший подарунок це допомага ЗСУ:
+              на святі буде фізична баночка для
+              донатів і QR-код для миттєвих
+              внесків. 🇺🇦
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons-container">
+        <a
+          href="https://forms.gle/BJ8WZWWXWSgG8tqu5"
+          class="button rsvp-button"
+          target="_blank"
+          >📨 Підтвердити присутність</a
+        >
+        <a
+          href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=NHFkNDdhcTZ1OHVhZWpyNWp1amE2ZTUwZW4gc2Ftb3Rpcy5zdml0bGFuYUBt&amp;tmsrc=samotis.svitlana%40gmail.com"
+          class="button calendar-button"
+          target="_blank"
+          >➕ Додати в календар</a
+        >
+      </div>
 
       <div class="before-countdown">
         До нашого свята залишилось:
@@ -246,102 +424,26 @@
           <div>Секунд</div>
         </div>
       </div>
-
       <div class="divider"></div>
 
-      <div class="section">
-        <h3>Про свято</h3>
-        <div class="description">
-          У часи, коли кожна мить разом має
-          особливу цінність, ми хочемо зібрати
-          найближчих під відкритим небом, серед
-          природи, щоб подарувати трохи тепла і
-          радості.
-        </div>
-      </div>
+      <div
+        style="
+          margin-top: 10px;
+          color: #cccccc;
+          font-size: 1rem;
+        "
+      >
+        <p>
+          <strong>
+            Будь ласка, підтвердьте присутність до
+            1 липня</strong
+          >
+        </p>
 
-      <div class="divider"></div>
-
-      <div class="section">
-        <h3>Деталі свята</h3>
-        <div class="details">
-          <div class="details-block">
-            <div>Коли?</div>
-            <strong>19 Липня 2025, 15:00</strong>
-          </div>
-          <div class="details-block">
-            <div>Де?</div>
-            <strong
-              ><a
-                href="https://maps.app.goo.gl/HyHmLWaKMkXBACr49"
-                target="_blank"
-                >Ранчо "Скарбова Гора"</a
-              ></strong
-            >
-          </div>
-          <div class="details-block">
-            <div>Дрес-код?</div>
-            <strong
-              >Вишиванки та зручне взуття</strong
-            >
-            <div
-              style="
-                margin-top: 10px;
-                color: #cccccc;
-                font-size: 1rem;
-              "
-            >
-              Ми б дуже хотіли, щоб кожен гість
-              був у своїй найкращій вишиванці.
-            </div>
-          </div>
-          <div class="details-block">
-            <div>Подарунки?</div>
-            <div
-              style="
-                margin-top: 10px;
-                color: #cccccc;
-                font-size: 1rem;
-              "
-            >
-              Якщо хтось захоче нас привітати, на
-              святі буде банка на ЗСУ. Будемо
-              вдячні за підтримку!
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Кнопки -->
-      <div class="buttons-container">
-        <a
-          href="https://forms.gle/BJ8WZWWXWSgG8tqu5"
-          class="button rsvp-button"
-          target="_blank"
-          >📨 Підтвердити присутність</a
-        >
-        <a
-          href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=NHFkNDdhcTZ1OHVhZWpyNWp1amE2ZTUwZW4gc2Ftb3Rpcy5zdml0bGFuYUBt&amp;tmsrc=samotis.svitlana%40gmail.com"
-          class="button calendar-button"
-          target="_blank"
-          >➕ Додати в календар</a
-        >
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="section">
-        <h3>Як дістатися</h3>
-        <div class="travel">
-          Якщо ви плануєте добиратись автомобілем,
-          біля локації доступний безкоштовний
-          паркінг для всіх гостей.
-          <br /><br />
-          Для тих, хто бажає, ми організуємо
-          автобус з центру міста до місця
-          святкування та назад. Деталі про
-          трансфер надішлемо ближче до дати події.
-        </div>
+        <p>
+          💖 Ми з нетерпінням чекаємо святкування
+          цього особливого дня разом з вами! 💖
+        </p>
       </div>
     </div>
 
