@@ -13,20 +13,32 @@
         scroll-behavior: smooth;
       }
       body {
-        background: url("CleanShot 2025-05-26 at 11.54.37@2x.png")
-          no-repeat center center fixed;
-        background-size: cover;
-        color: #000;
-        font-family: "Roboto", sans-serif;
         margin: 0;
         padding: 0;
+        background: url("CleanShot 2025-05-26 at 11.54.37@2x.png") no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+        font-family: "Roboto", sans-serif;
+        color: #333;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 240, 245, 0.8));
+        z-index: 0;
       }
       .content-wrapper {
+        position: relative;
+        z-index: 1;
         max-width: 700px;
         margin: 50px auto;
-        background-color: rgba(255, 255, 255, 0.85);
+        background-color: rgba(255, 250, 245, 0.95);
         padding: 50px 30px;
-        border-radius: 16px;
+        border-radius: 20px;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         animation: fadeIn 1.5s ease;
       }
@@ -39,12 +51,20 @@
         font-size: 2.8em;
         font-weight: 700;
         margin-bottom: 12px;
+        color: #b56b95;
       }
       h2 {
         font-family: "Playfair Display", serif;
         font-size: 1.5em;
         font-weight: 400;
         margin-bottom: 25px;
+      }
+      .divider {
+        width: 60px;
+        height: 2px;
+        background: #b56b95;
+        margin: 30px auto;
+        border-radius: 2px;
       }
       .info p {
         margin: 8px 0;
@@ -63,8 +83,8 @@
         width: 100%;
         margin: 30px 0;
         display: block;
-        border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
       .image-preview:hover {
@@ -72,9 +92,10 @@
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
       }
       .countdown-title {
-        font-size: 1.3em;
+        font-size: 1.4em;
         font-weight: bold;
         margin-bottom: 20px;
+        color: #b56b95;
       }
       .countdown {
         display: flex;
@@ -83,19 +104,26 @@
         font-size: 1.2em;
       }
       .countdown-item {
-        background: #000;
+        background: rgba(0, 0, 0, 0.7);
         color: #fff;
-        padding: 14px 12px;
-        min-width: 70px;
-        border-radius: 12px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
+        font-weight: bold;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+      .countdown-item:hover {
+        transform: scale(1.05);
       }
       .count-label {
-        font-size: 0.8em;
-        margin-top: 6px;
-        color: #ccc;
+        font-size: 0.75em;
+        margin-top: 5px;
+        color: #f5f5f5;
       }
       .rsvp-button {
         display: inline-block;
@@ -153,6 +181,8 @@
         <h2>запрошують вас на особливу подію 💕</h2>
       </section>
 
+      <div class="divider"></div>
+
       <section class="section info">
         <p><strong>Дата:</strong> 19 Липня 2025</p>
         <p><strong>Час:</strong> 15:00</p>
@@ -169,6 +199,8 @@
       <section class="section">
         <img src="DSC_6160.jpg" alt="Ми разом" class="image-preview" />
       </section>
+
+      <div class="divider"></div>
 
       <section class="section">
         <div class="countdown-title">До великого дня залишилося:</div>
@@ -192,6 +224,8 @@
         </div>
       </section>
 
+      <div class="divider"></div>
+
       <section class="section">
         <a
           href="https://forms.gle/BJ8WZWWXWSgG8tqu5"
@@ -202,10 +236,10 @@
         <p><strong>Будь ласка, підтвердьте присутність до 1 липня</strong></p>
       </section>
 
+      <div class="divider"></div>
+
       <section class="section footer">
-        <p>
-          💖 Ми з нетерпінням чекаємо святкування цього особливого дня разом з вами! 💖
-        </p>
+        <p>💖 Ми з нетерпінням чекаємо святкування цього особливого дня разом з вами! 💖</p>
       </section>
     </div>
 
