@@ -12,290 +12,281 @@
       rel="stylesheet"
     />
     <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        margin: 0;
-        padding: 0;
-        background: url("background.png")
-          no-repeat center center fixed;
-        background-size: cover;
-        font-family: "Roboto", sans-serif;
-        color: #fefefe;
-        position: relative;
-        overflow-x: hidden;
-      }
-      /* Світлий overlay (теплий відтінок на фон) */
-      .background-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          rgba(255, 255, 255, 0.2),
-          rgba(245, 240, 230, 0.4)
-        );
-        z-index: 0;
-      }
-      /* Темна підкладка для тексту через всю сторінку */
-      .global-text-background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          to bottom,
-          rgba(30, 30, 30, 0.4) 0%,
-          rgba(30, 30, 30, 0.6) 100%
-        );
-        z-index: 1;
-      }
-      .content-wrapper {
-        position: relative;
-        z-index: 2; /* Контент зверху */
-        max-width: 1000px;
-        margin: 80px auto;
-        padding: 0 30px;
-        text-align: center;
-      }
-      h1,
-      h2,
-      h3 {
-        font-family: "Playfair Display", serif;
-        margin-bottom: 20px;
-        color: #fefefe;
-      }
-      h1 {
-        font-size: 3rem;
-      }
-      h2 {
-        font-size: 1.75rem;
-        font-weight: 400;
-        margin-bottom: 30px;
-      }
-      h3 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-      }
-      .divider {
-        width: 60px;
-        height: 2px;
-        background: #6b8e23;
-        margin: 40px auto;
-      }
-      .hero-image {
-        width: 100%;
-        max-width: 800px;
-        margin: 40px auto;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        display: block;
-        position: relative;
-        z-index: 2; /* Фото поверх фону */
-      }
-      .before-countdown {
-        font-size: 1.5rem;
-        margin: 40px 0 20px 0;
-        font-family: "Playfair Display", serif;
-      }
-      .countdown {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        margin-bottom: 60px;
-        flex-wrap: wrap;
-      }
-      .countdown-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .countdown-item div:first-child {
-        font-size: 2.5rem;
-        font-weight: 500;
-      }
-      .countdown-item div:last-child {
-        font-size: 1rem;
-        color: #eae5dc;
-        margin-top: 8px;
-        letter-spacing: 1px;
-      }
-      .countdown-divider {
-        height: 60px;
-        width: 1px;
-        background-color: #aaa;
-      }
-      .description,
-      .details,
-      .travel {
-        font-size: 1.125rem;
-        font-weight: 300;
-        line-height: 1.7;
-        max-width: 700px;
-        margin: 0 auto 40px auto;
-      }
-      .details-block {
-        margin-bottom: 25px;
-      }
-      .details-block strong {
-        display: block;
-        margin-top: 5px;
-        font-size: 1.25rem;
-        font-weight: 400;
-      }
-      .buttons-container {
-        margin: 40px 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+          html {
+            scroll-behavior: smooth;
+          }
+          body {
+            margin: 0;
+            padding: 0;
+            background: url("background.png")
+              no-repeat center center fixed;
+            background-size: cover;
+            font-family: "Roboto", sans-serif;
+            color: #fefefe;
+            position: relative;
+            overflow-x: hidden;
+          }
+          /* Світлий overlay (теплий відтінок на фон) */
+          .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              rgba(255, 255, 255, 0.2),
+              rgba(245, 240, 230, 0.4)
+            );
+            z-index: 0;
+          }
+          /* Темна підкладка для тексту через всю сторінку */
+          .global-text-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              to bottom,
+              rgba(30, 30, 30, 0.4) 0%,
+              rgba(30, 30, 30, 0.6) 100%
+            );
+            z-index: 1;
+          }
+          .content-wrapper {
+            position: relative;
+            z-index: 2; /* Контент зверху */
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 30px;
+            text-align: center;
+          }
+          h1,
+          h2,
+          h3 {
+            font-family: "Playfair Display", serif;
+            margin-bottom: 20px;
+            color: #fefefe;
+          }
+          h1 {
+            font-size: 3rem;
+          }
+          h2 {
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+          }
+          h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+          }
+          .divider {
+            width: 60px;
+            height: 2px;
+            background: #6b8e23;
+            margin: 40px auto;
+          }
+          .hero-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 40px auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: block;
+            position: relative;
+            z-index: 2; /* Фото поверх фону */
+          }
+          .before-countdown {
+            font-size: 1.5rem;
+            margin: 40px 0 20px 0;
+            font-family: "Playfair Display", serif;
+          }
+          .countdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+          }
+          .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .countdown-item div:first-child {
+            font-size: 2.5rem;
+            font-weight: 500;
+          }
+          .countdown-item div:last-child {
+            font-size: 1rem;
+            color: #eae5dc;
+            margin-top: 8px;
+            letter-spacing: 1px;
+          }
+          .countdown-divider {
+            height: 60px;
+            width: 1px;
+            background-color: #aaa;
+          }
+          .description,
+          .details,
+          .travel {
+            font-size: 1.125rem;
+            font-weight: 300;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+          }
+          .details-block {
+            margin-bottom: 25px;
+          }
+          .details-block strong {
+            display: block;
+            margin-top: 5px;
+            font-size: 1.25rem;
+            font-weight: 400;
+          }
+          .buttons-container {
+            margin: 40px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+          }
+          .button {
+            padding: 14px 28px;
+            font-size: 1.125rem;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+          }
+          .rsvp-button {
+            background-color: #6d7b68;
+            color: #fff;
+          }
+          .rsvp-button:hover {
+            background-color: #5a6655;
+          }
+          .calendar-button {
+            background-color: #c4b7a6;
+            color: #3d3d3d;
+          }
+          .calendar-button:hover {
+            background-color: #b0a08c;
+          }
+          a {
+            color: #fefefe;
+            text-decoration: underline;
+          }
+          @media (max-width: 768px) {
+            h1 {
+              font-size: 2.5rem;
+            }
+            h2 {
+              font-size: 1.5rem;
+            }
+            h3 {
+              font-size: 1.5rem;
+            }
+            .countdown {
+              flex-direction: column;
+              gap: 20px;
+            }
+            .countdown-divider {
+              display: none;
+            }
+            .buttons-container {
+              flex-direction: column;
+            }
+          }
+          @media (max-width: 768px) {
+            .content-wrapper {
+              margin: 40px 20px; /* менші відступи */
+              padding: 0 15px;
+            }
+            h1 {
+              font-size: 2.2rem;
+              line-height: 1.2;
+            }
+            h2 {
+              font-size: 1.4rem;
+              margin-bottom: 20px;
+            }
+            h3 {
+              font-size: 1.6rem;
+              margin-bottom: 16px;
+            }
+            .hero-image {
+              width: 100%;
+              max-width: 90%; /* трошки менше зображення */
+              margin: 30px auto;
+            }
+            .description,
+            .details,
+            .travel {
+              font-size: 1rem;
+              line-height: 1.6;
+              padding: 0 10px;
+            }
+            .countdown {
+              flex-direction: column;
+              gap: 20px;
+            }
+            .countdown {
+        flex-wrap: wrap; /* дозволити переносити, але залишити рядочком */
         gap: 20px;
-      }
-      .button {
-        padding: 14px 28px;
-        font-size: 1.125rem;
-        text-decoration: none;
-        border-radius: 8px;
-        transition: background 0.3s ease;
-        font-weight: 500;
-        border: none;
-        cursor: pointer;
-        display: inline-block;
-      }
-      .rsvp-button {
-        background-color: #6d7b68;
-        color: #fff;
-      }
-      .rsvp-button:hover {
-        background-color: #5a6655;
-      }
-      .calendar-button {
-        background-color: #c4b7a6;
-        color: #3d3d3d;
-      }
-      .calendar-button:hover {
-        background-color: #b0a08c;
-      }
-      a {
-        color: #fefefe;
-        text-decoration: underline;
-      }
-      @media (max-width: 768px) {
-        h1 {
-          font-size: 2.5rem;
-        }
-        h2 {
-          font-size: 1.5rem;
-        }
-        h3 {
-          font-size: 1.5rem;
-        }
-      .countdown {
-  display: flex;
-  flex-wrap: wrap; /* щоб не ламалось на дуже малих екранах */
-  justify-content: center;
-  gap: 40px;
-}
-        .buttons-container {
-          flex-direction: column;
-        }
-      }
-      @media (max-width: 768px) {
-        .hero-image {
-    width: 100%;
-    max-width: 100%;
-    margin: 20px 0;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  }
-
-  .content-wrapper {
-    margin: 40px 15px; /* Зменшуємо бокові відступи для всієї сторінки */
-    padding: 0;
-  }
-
-  .countdown {
-    display: flex;
-    flex-wrap: wrap; /* щоб не ламалося */
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .countdown-divider {
-    display: none; /* прибираємо вертикальні лінії на дуже маленьких екранах */
-  }
-}
-        h1 {
-          font-size: 2.2rem;
-          line-height: 1.2;
-        }
-        h2 {
-          font-size: 1.4rem;
-          margin-bottom: 20px;
-        }
-        h3 {
-          font-size: 1.6rem;
-          margin-bottom: 16px;
-        }
-        .hero-image {
-          width: 100%;
-          max-width: 90%; /* трошки менше зображення */
-          margin: 30px auto;
-        }
-        .description,
-        .details,
-        .travel {
-          font-size: 1rem;
-          line-height: 1.6;
-          padding: 0 10px;
-        }
-        .countdown {
-          flex-direction: column;
-          gap: 20px;
-        }
-        .countdown-divider {
-          display: none; /* Прибрати вертикальні лінії на мобільних */
-        }
-        .countdown-item div:first-child {
-          font-size: 2rem;
-        }
-        .buttons-container {
-          flex-direction: column;
-          gap: 15px;
-        }
-        .button {
-          width: 100%;
-          padding: 12px 0;
-          font-size: 1.1rem;
-        }
-        .divider {
-          margin: 30px auto;
-        }
+        justify-content: center; /* центровані */
       }
 
-      /* Додатково адаптуємо для дуже маленьких екранів */
-      @media (max-width: 480px) {
-        h1 {
-          font-size: 2rem;
-        }
-        h2 {
-          font-size: 1.2rem;
-        }
-        h3 {
-          font-size: 1.4rem;
-        }
-        .description,
-        .details,
-        .travel {
-          font-size: 0.95rem;
-        }
-        .button {
-          font-size: 1rem;
-        }
+      /* НЕ треба flex-direction: column тут! */
+
+      .countdown-divider {
+        display: none; /* можна залишити, щоб на дуже вузьких телефонах забрати лінії */
       }
+
+      .countdown-item div:first-child {
+        font-size: 2rem;
+      }
+            }
+            .buttons-container {
+              flex-direction: column;
+              gap: 15px;
+            }
+            .button {
+              width: 100%;
+              padding: 12px 0;
+              font-size: 1.1rem;
+            }
+            .divider {
+              margin: 30px auto;
+            }
+          }
+
+          /* Додатково адаптуємо для дуже маленьких екранів */
+          @media (max-width: 480px) {
+            h1 {
+              font-size: 2rem;
+            }
+            h2 {
+              font-size: 1.2rem;
+            }
+            h3 {
+              font-size: 1.4rem;
+            }
+            .description,
+            .details,
+            .travel {
+              font-size: 0.95rem;
+            }
+            .button {
+              font-size: 1rem;
+            }
+          }
     </style>
   </head>
   <body>
