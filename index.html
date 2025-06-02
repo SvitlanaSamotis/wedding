@@ -2,10 +2,13 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Світлана & Данило</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto:wght@300;400&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -15,259 +18,387 @@
       body {
         margin: 0;
         padding: 0;
-        background: url("background.png") no-repeat center center fixed;
+        background: url("background.png")
+          no-repeat center center fixed;
         background-size: cover;
-        position: relative;
         font-family: "Roboto", sans-serif;
-        color: #333;
+        color: #f7f5f2;
+        position: relative;
+        overflow-x: hidden;
       }
-      body::before {
-        content: "";
+      /* Блок затемнення */
+      .background-overlay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 240, 245, 0.8));
+        background: linear-gradient(
+          rgba(20, 20, 20, 0.6),
+          /* темний зверху */
+            rgba(245, 240, 230, 0.4)
+            /* теплий пастельний вниз */
+        );
         z-index: 0;
       }
       .content-wrapper {
         position: relative;
         z-index: 1;
-        max-width: 700px;
-        margin: 50px auto;
-        background-color: rgba(255, 250, 245, 0.95);
-        padding: 50px 30px;
-        border-radius: 20px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        animation: fadeIn 1.5s ease;
-      }
-      .section {
+        max-width: 1000px;
+        margin: 80px auto;
+        padding: 0 30px;
         text-align: center;
-        margin-bottom: 50px;
       }
       h1 {
         font-family: "Playfair Display", serif;
-        font-size: 2.8em;
-        font-weight: 700;
-        margin-bottom: 12px;
-        color: #b56b95;
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: #f7f5f2;
       }
       h2 {
         font-family: "Playfair Display", serif;
-        font-size: 1.5em;
+        font-size: 1.75rem;
         font-weight: 400;
-        margin-bottom: 25px;
+        margin-bottom: 50px;
+        color: #eae5dc;
+      }
+      h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #f7f5f2;
       }
       .divider {
         width: 60px;
         height: 2px;
-        background: #b56b95;
-        margin: 30px auto;
+        background: #6b8e23;
+        margin: 40px auto;
         border-radius: 2px;
       }
-      .info p {
-        margin: 8px 0;
-        font-size: 1.1em;
-        line-height: 1.7;
-      }
-      .info a {
-        color: inherit;
-        text-decoration: none;
-        border-bottom: 1px dotted #b56b95;
-      }
-      .info a:hover {
-        text-decoration: underline;
-      }
-      .image-preview {
+      .hero-image {
         width: 100%;
-        margin: 30px 0;
-        display: block;
+        max-width: 800px;
+        margin: 40px auto;
         border-radius: 16px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        display: block;
       }
-      .image-preview:hover {
-        transform: scale(1.02);
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-      }
-      .countdown-title {
-        font-size: 1.4em;
-        font-weight: bold;
-        margin-bottom: 20px;
-        color: #b56b95;
+      .before-countdown {
+        font-size: 1.5rem;
+        margin: 40px 0 20px 0;
+        font-family: "Playfair Display", serif;
+        color: #f7f5f2;
       }
       .countdown {
         display: flex;
         justify-content: center;
-        gap: 25px;
-        font-size: 1.2em;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 60px;
+        flex-wrap: wrap;
       }
       .countdown-item {
-        background: rgba(0, 0, 0, 0.7);
-        color: #fff;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        font-weight: bold;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
       }
-      .countdown-item:hover {
-        transform: scale(1.05);
+      .countdown-item div:first-child {
+        font-size: 2.5rem;
+        font-family: "Playfair Display", serif;
+        font-weight: 500;
+        color: #f7f5f2;
       }
-      .count-label {
-        font-size: 0.75em;
+      .countdown-item div:last-child {
+        font-size: 1rem;
+        color: #eae5dc;
+        margin-top: 8px;
+        letter-spacing: 1px;
+      }
+      .countdown-divider {
+        height: 60px;
+        width: 1px;
+        background-color: #aaa;
+      }
+      .section {
+        margin: 60px 0;
+      }
+      .description,
+      .details,
+      .travel {
+        font-size: 1.125rem;
+        font-weight: 300;
+        line-height: 1.7;
+        max-width: 700px;
+        margin: 0 auto 40px auto;
+        color: #f0f0f0;
+      }
+      .details-block {
+        margin-bottom: 25px;
+      }
+      .details-block strong {
+        display: block;
         margin-top: 5px;
-        color: #f5f5f5;
+        font-size: 1.25rem;
+        color: #f7f5f2;
+        font-weight: 400;
       }
-      .rsvp-button {
-        display: inline-block;
-        background: #b56b95;
-        color: #fff;
+
+      /* КНОПКИ */
+      .buttons-container {
+        margin: 40px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .button {
         padding: 14px 28px;
-        font-size: 1.1em;
+        font-size: 1.125rem;
         text-decoration: none;
         border-radius: 8px;
-        margin-top: 20px;
         transition: background 0.3s ease;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+      }
+      .rsvp-button {
+        background-color: #6d7b68; /* глибокий приглушений оливковий */
+        color: #fff;
       }
       .rsvp-button:hover {
-        background: #9c5e7f;
+        background-color: #5a6655; /* темніше при наведенні */
       }
-      .footer {
-        margin-top: 40px;
-        font-style: italic;
-        color: #555;
-        font-size: 1em;
-        line-height: 1.7;
+
+      .calendar-button {
+        background-color: #c4b7a6; /* спокійний бежево-золотистий */
+        color: #3d3d3d;
       }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      .calendar-button:hover {
+        background-color: #b0a08c; /* темніше при наведенні */
       }
-      @media (max-width: 600px) {
+      a {
+        color: #eae5dc;
+        text-decoration: underline;
+      }
+      @media (max-width: 768px) {
         h1 {
-          font-size: 2.2em;
+          font-size: 2.5rem;
         }
         h2 {
-          font-size: 1.3em;
+          font-size: 1.5rem;
+        }
+        h3 {
+          font-size: 1.5rem;
         }
         .countdown {
           flex-direction: column;
-          gap: 12px;
+          gap: 20px;
         }
-        .rsvp-button {
-          display: block;
-          margin: 20px auto 0;
+        .countdown-divider {
+          display: none;
+        }
+        .buttons-container {
+          flex-direction: column;
         }
       }
     </style>
   </head>
   <body>
+    <div class="background-overlay"></div>
+    <!-- Темніший верх + теплий низ -->
+
     <div class="content-wrapper">
-      <section class="section hero">
-        <h1>💍 Світлана & Данило</h1>
-        <h2>запрошують вас на особливу подію 💕</h2>
-      </section>
+      <h1>Світлана & Данило</h1>
+      <h2>
+        запрошують вас стати частиною їхнього
+        свята
+      </h2>
+
+      <img
+        src="DSC_6160.jpg"
+        alt="Ми разом"
+        class="hero-image"
+      />
+
+      <div class="before-countdown">
+        До нашого свята залишилось:
+      </div>
+
+      <div class="countdown">
+        <div class="countdown-item">
+          <div id="days">00</div>
+          <div>Днів</div>
+        </div>
+        <div class="countdown-divider"></div>
+        <div class="countdown-item">
+          <div id="hours">00</div>
+          <div>Годин</div>
+        </div>
+        <div class="countdown-divider"></div>
+        <div class="countdown-item">
+          <div id="minutes">00</div>
+          <div>Хвилин</div>
+        </div>
+        <div class="countdown-divider"></div>
+        <div class="countdown-item">
+          <div id="seconds">00</div>
+          <div>Секунд</div>
+        </div>
+      </div>
 
       <div class="divider"></div>
 
-      <section class="section info">
-        <p><strong>Дата:</strong> 19 Липня 2025</p>
-        <p><strong>Час:</strong> 15:00</p>
-        <p>
-          <strong>Місце:</strong>
-          <a href="https://maps.app.goo.gl/HyHmLWaKMkXBACr49" target="_blank"
-            >Ранчо "Скарбова Гора"</a
-          >
-        </p>
-        <p><strong>Дрес-код:</strong> Вишиванки та зручне взуття</p>
-        <p><strong>Особливості:</strong> Святкування відбудеться на природі</p>
-      </section>
-
-      <section class="section">
-      <img src="DSC_6160.jpg" alt="Ми разом" class="image-preview" />
-      </section>
+      <div class="section">
+        <h3>Про свято</h3>
+        <div class="description">
+          У часи, коли кожна мить разом має
+          особливу цінність, ми хочемо зібрати
+          найближчих під відкритим небом, серед
+          природи, щоб подарувати трохи тепла і
+          радості.
+        </div>
+      </div>
 
       <div class="divider"></div>
 
-      <section class="section">
-        <div class="countdown-title">До великого дня залишилося:</div>
-        <div class="countdown">
-          <div class="countdown-item">
-            <div id="days">00</div>
-            <div class="count-label">днів</div>
+      <div class="section">
+        <h3>Деталі свята</h3>
+        <div class="details">
+          <div class="details-block">
+            <div>Коли?</div>
+            <strong>19 Липня 2025, 15:00</strong>
           </div>
-          <div class="countdown-item">
-            <div id="hours">00</div>
-            <div class="count-label">годин</div>
+          <div class="details-block">
+            <div>Де?</div>
+            <strong
+              ><a
+                href="https://maps.app.goo.gl/HyHmLWaKMkXBACr49"
+                target="_blank"
+                >Ранчо "Скарбова Гора"</a
+              ></strong
+            >
           </div>
-          <div class="countdown-item">
-            <div id="minutes">00</div>
-            <div class="count-label">хвилин</div>
+          <div class="details-block">
+            <div>Дрес-код?</div>
+            <strong
+              >Вишиванки та зручне взуття</strong
+            >
+            <div
+              style="
+                margin-top: 10px;
+                color: #cccccc;
+                font-size: 1rem;
+              "
+            >
+              Ми б дуже хотіли, щоб кожен гість
+              був у своїй найкращій вишиванці.
+            </div>
           </div>
-          <div class="countdown-item">
-            <div id="seconds">00</div>
-            <div class="count-label">секунд</div>
+          <div class="details-block">
+            <div>Подарунки?</div>
+            <div
+              style="
+                margin-top: 10px;
+                color: #cccccc;
+                font-size: 1rem;
+              "
+            >
+              Якщо хтось захоче нас привітати, на
+              святі буде банка на ЗСУ. Будемо
+              вдячні за підтримку!
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <div class="divider"></div>
-
-      <section class="section">
+      <!-- Кнопки -->
+      <div class="buttons-container">
         <a
           href="https://forms.gle/BJ8WZWWXWSgG8tqu5"
-          class="rsvp-button"
+          class="button rsvp-button"
           target="_blank"
           >📨 Підтвердити присутність</a
         >
-        <p><strong>Будь ласка, підтвердьте присутність до 1 липня</strong></p>
-      </section>
+        <a
+          href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=NHFkNDdhcTZ1OHVhZWpyNWp1amE2ZTUwZW4gc2Ftb3Rpcy5zdml0bGFuYUBt&amp;tmsrc=samotis.svitlana%40gmail.com"
+          class="button calendar-button"
+          target="_blank"
+          >➕ Додати в календар</a
+        >
+      </div>
 
       <div class="divider"></div>
 
-      <section class="section footer">
-        <p>💖 Ми з нетерпінням чекаємо святкування цього особливого дня разом з вами! 💖</p>
-      </section>
+      <div class="section">
+        <h3>Як дістатися</h3>
+        <div class="travel">
+          Якщо ви плануєте добиратись автомобілем,
+          біля локації доступний безкоштовний
+          паркінг для всіх гостей.
+          <br /><br />
+          Для тих, хто бажає, ми організуємо
+          автобус з центру міста до місця
+          святкування та назад. Деталі про
+          трансфер надішлемо ближче до дати події.
+        </div>
+      </div>
     </div>
 
     <script>
-      const daysEl = document.getElementById("days");
-      const hoursEl = document.getElementById("hours");
-      const minutesEl = document.getElementById("minutes");
-      const secondsEl = document.getElementById("seconds");
+      const daysEl =
+        document.getElementById("days");
+      const hoursEl =
+        document.getElementById("hours");
+      const minutesEl =
+        document.getElementById("minutes");
+      const secondsEl =
+        document.getElementById("seconds");
 
       function updateCountdown() {
-        const weddingDate = new Date("July 19, 2025 16:00:00").getTime();
+        const weddingDate = new Date(
+          "July 19, 2025 16:00:00"
+        ).getTime();
         const now = new Date().getTime();
         const distance = weddingDate - now;
 
         if (distance < 0) {
-          daysEl.innerText = hoursEl.innerText = minutesEl.innerText = secondsEl.innerText = "00";
+          daysEl.innerText =
+            hoursEl.innerText =
+            minutesEl.innerText =
+            secondsEl.innerText =
+              "00";
           return;
         }
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        const days = Math.floor(
+          distance / (1000 * 60 * 60 * 24)
+        );
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (distance % (1000 * 60 * 60)) /
+            (1000 * 60)
+        );
+        const seconds = Math.floor(
+          (distance % (1000 * 60)) / 1000
+        );
 
-        daysEl.innerText = String(days).padStart(2, "0");
-        hoursEl.innerText = String(hours).padStart(2, "0");
-        minutesEl.innerText = String(minutes).padStart(2, "0");
-        secondsEl.innerText = String(seconds).padStart(2, "0");
+        daysEl.innerText = String(days).padStart(
+          2,
+          "0"
+        );
+        hoursEl.innerText = String(
+          hours
+        ).padStart(2, "0");
+        minutesEl.innerText = String(
+          minutes
+        ).padStart(2, "0");
+        secondsEl.innerText = String(
+          seconds
+        ).padStart(2, "0");
       }
 
       updateCountdown();
