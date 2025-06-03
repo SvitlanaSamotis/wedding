@@ -2,9 +2,15 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Світлана & Данило</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <style>
       html {
         scroll-behavior: smooth;
@@ -12,42 +18,52 @@
       body {
         margin: 0;
         padding: 0;
-        background: url("background.png") no-repeat center center fixed;
+        background: url("background.png")
+          no-repeat center center fixed;
         background-size: cover;
         font-family: "Roboto", sans-serif;
         color: #fefefe;
         position: relative;
         overflow-x: hidden;
       }
-      h1, h2, h3 {
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
+      h1,
+      h2,
+      h3 {
+        text-shadow: 1px 1px 3px
+          rgba(0, 0, 0, 0.5);
+      }
 
-.description, .details, .travel {
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-}
+      .description,
+      .details,
+      .travel {
+        text-shadow: 1px 1px 2px
+          rgba(0, 0, 0, 0.4);
+      }
 
       .music-button {
-  background-color: #6d7b68;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  margin-top: 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-.music-button:hover {
-  background-color: #5a6655;
-}
+        background-color: #6d7b68;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        margin-top: 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      .music-button:hover {
+        background-color: #5a6655;
+      }
       .background-overlay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(245, 240, 230, 0.4));
+        background: linear-gradient(
+          rgba(255, 255, 255, 0.2),
+          rgba(245, 240, 230, 0.4)
+        );
         z-index: 0;
       }
       .global-text-background {
@@ -56,7 +72,11 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, rgba(30, 30, 30, 0.4) 0%, rgba(30, 30, 30, 0.6) 100%);
+        background: linear-gradient(
+          to bottom,
+          rgba(30, 30, 30, 0.4) 0%,
+          rgba(30, 30, 30, 0.6) 100%
+        );
         z-index: 1;
       }
       .content-wrapper {
@@ -67,7 +87,9 @@
         padding: 0 30px;
         text-align: center;
       }
-      h1, h2, h3 {
+      h1,
+      h2,
+      h3 {
         font-family: "Playfair Display", serif;
         margin-bottom: 20px;
         color: #fefefe;
@@ -90,16 +112,16 @@
         background: #6d7b68;
         margin: 40px auto;
       }
-     .hero-image {
-  width: 100%;
-  max-width: 800px; /* однакова максимальна ширина для всіх фото на десктопі */
-  margin: 40px auto;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  display: block;
-  position: relative;
-  z-index: 2;
-}
+      .hero-image {
+        width: 100%;
+        max-width: 800px; /* однакова максимальна ширина для всіх фото на десктопі */
+        margin: 40px auto;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        display: block;
+        position: relative;
+        z-index: 2;
+      }
       .before-countdown {
         font-size: 1.5rem;
         margin: 40px 0 20px 0;
@@ -133,7 +155,9 @@
         width: 1px;
         background-color: #aaa;
       }
-      .description, .details, .travel {
+      .description,
+      .details,
+      .travel {
         font-size: 1.125rem;
         font-weight: 300;
         line-height: 1.7;
@@ -187,13 +211,15 @@
       }
 
       @media (max-width: 768px) {
-      body {
-    
-    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(245, 240, 230, 0.5)),
-                url("fon.png") no-repeat center center fixed;
-    background-size: cover;
-  
-  }
+        body {
+          background: linear-gradient(
+              rgba(255, 255, 255, 0.5),
+              rgba(245, 240, 230, 0.5)
+            ),
+            url("fon.png") no-repeat center center
+              fixed;
+          background-size: cover;
+        }
         .content-wrapper {
           margin: 40px 15px;
           padding: 0;
@@ -209,15 +235,17 @@
           font-size: 1.6rem;
           margin-bottom: 16px;
         }
-        .description, .details, .travel {
+        .description,
+        .details,
+        .travel {
           font-size: 1rem;
           line-height: 1.6;
         }
-       .hero-image {
-    width: 100%;
-    max-width: 100%; /* повна ширина екрану на телефоні */
-    margin: 20px 0;
-  }
+        .hero-image {
+          width: 100%;
+          max-width: 100%; /* повна ширина екрану на телефоні */
+          margin: 20px 0;
+        }
         .countdown {
           gap: 20px;
           flex-wrap: wrap;
@@ -253,7 +281,9 @@
         h3 {
           font-size: 1.4rem;
         }
-        .description, .details, .travel {
+        .description,
+        .details,
+        .travel {
           font-size: 0.95rem;
         }
         .button {
@@ -268,63 +298,155 @@
 
     <div class="content-wrapper">
       <h1>Світлана & Данило</h1>
-      <h2>запрошують вас стати частиною їхнього свята</h2>
+      <h2>
+        запрошують вас стати частиною їхнього
+        свята
+      </h2>
 
-      <div class="divider"></div>
- <audio id="background-music" src="song.mp3" preload="auto" loop></audio>
-        <button id="play-music" class="button music-button">🎶 Музика для настрою 🎶</button>
+      <audio
+        id="background-music"
+        src="song.mp3"
+        preload="auto"
+        loop
+      ></audio>
+      <button
+        id="play-music"
+        class="button music-button"
+      >
+        🎶 Музика для настрою 🎶
+      </button>
+
       <div class="section">
         <h3>Що це?</h3>
         <div class="description">
-        
-У часи, коли кожна мить разом має особливу цінність, Данило і Світлана вирішили об'єднатися в одну сім'ю і ґречно запрошують тебе на святкування, щоб розділити нашу радість гуртом! 🥳
+          У часи, коли кожна мить разом має
+          особливу цінність, Данило і Світлана
+          вирішили об'єднатися в одну сім'ю і
+          ґречно запрошують тебе на святкування,
+          щоб розділити нашу радість гуртом! 🥳
         </div>
       </div>
-     
+
       <div class="divider"></div>
 
-      <img src="photo.png" alt="Ми разом" class="hero-image" />
+      <img
+        src="photo.png"
+        alt="Ми разом"
+        class="hero-image"
+      />
       <div class="divider"></div>
 
       <div class="section">
-        <h3>Деталі свята</h3>
         <div class="details">
           <div class="details-block">
-            <div>Коли?</div>
-            <strong>Ми очікуємо тебе 19 липня о 15 годині 🕒</strong>
+            <h3>Коли?</h3>
+            <strong
+              >Ми очікуємо тебе 19 липня о 15
+              годині. 🕒</strong
+            >
           </div>
           <div>
-           <img src="background5.png" alt="Ми разом" class="hero-image" />
+            <img
+              src="background5.png"
+              alt="Ми разом"
+              class="hero-image"
+            />
           </div>
           <div class="details-block">
-            <div>Де?</div>
-            <strong><a href="https://maps.app.goo.gl/HyHmLWaKMkXBACr49" target="_blank">Ранчо "Скарбова Гора"</a></strong>
-          <div style="margin-top: 10px; color: #ffffff; font-size: 1rem;">  Локація — за 30 км від Львова, поближче до природи, з багаттям і кониками. Дружнє до тваринок і діток. Святкування буде на пагорбі, тому не гребуйте хорошим взуттям на випадки слизької погоди. 🌦️ </div>
-            <img src="background2.png" alt="Ми разом" class="hero-image" />
-          </div>
-          <div class="details-block">
-            <div>Дрес-код?</div>
-            <strong>Святкування буде нетиповим: дрес-код — вишиванка і зручне взуття. </strong>
-            <div style="margin-top: 10px; color: #ffffff; font-size: 1rem;">
-               Ми хочемо поринути в атмосферу наших предків, згадати часи без костюмів і каблуків, і будемо раді бачити кожного гостя у його найкращій вишиванці.
+            <h3>Де?</h3>
+            <strong
+              ><a
+                href="https://maps.app.goo.gl/HyHmLWaKMkXBACr49"
+                target="_blank"
+                >Ранчо "Скарбова Гора"</a
+              ></strong
+            >
+            <div
+              style="
+                margin-top: 10px;
+                color: #ffffff;
+                font-size: 1rem;
+              "
+            >
+              Місцина — за 30 км від Львова,
+              поближче до природи, з багаттям і
+              кониками. Дружнє до тваринок і
+              діток. Святкування буде на пагорбі,
+              тому не гребуйте хорошим взуттям на
+              випадки слизької погоди. 🌦️
             </div>
-            <img src="background3.png" alt="Ми разом" class="hero-image" />
+            <img
+              src="background2.png"
+              alt="Ми разом"
+              class="hero-image"
+            />
           </div>
           <div class="details-block">
-            <div>Що дарувати молодим?</div>
-            <div style="margin-top: 10px; color: #ffffff; font-size: 1rem;">
-              Ми подбали і про це — на святкуванні буде офлайн і онлайн банка для збору пожертв, які ми радо приймемо для наших головних спонсорів — оборонців. 🪖
+            <h3>Що вдягнути?</h3>
+            <strong
+              >Святкування нетипове: вбрання
+              заходу - вишиванка і зручне
+              взуття.</strong
+            >
+            <div
+              style="
+                margin-top: 10px;
+                color: #ffffff;
+                font-size: 1rem;
+              "
+            >
+              Ми хочемо поринути в атмосферу наших
+              предків, згадати як це було без
+              костюмів і каблуків, і щоб кожен
+              гість похизувався своєю найкращою
+              вишиванкою. 🌝
+            </div>
+            <img
+              src="background3.png"
+              alt="Ми разом"
+              class="hero-image"
+            />
+          </div>
+          <div class="details-block">
+            <h3>Що дарувати молодим?</h3>
+            <div
+              style="
+                margin-top: 10px;
+                color: #ffffff;
+                font-size: 1rem;
+              "
+            >
+              Ми подбали і про це — на святкуванні
+              буде офлайн і онлайн банка для збору
+              пожертв, які ми радо приймемо для
+              наших головних спонсорів —
+              оборонців. 🪖 Будемо щиро вдячні,
+              якщо оберете онлайн-пожертву —
+              врятуєте нас від марш-кидка до
+              банку. 🏃‍♂️
             </div>
           </div>
         </div>
       </div>
 
       <div class="buttons-container">
-        <a href="https://forms.gle/BJ8WZWWXWSgG8tqu5" class="button rsvp-button" target="_blank">📨 Підтвердити присутність</a>
-        <a href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=NHFkNDdhcTZ1OHVhZWpyNWp1amE2ZTUwZW4gc2Ftb3Rpcy5zdml0bGFuYUBt&amp;tmsrc=samotis.svitlana%40gmail.com" class="button calendar-button" target="_blank">➕ Додати в календар</a>
+        <a
+          href="https://forms.gle/BJ8WZWWXWSgG8tqu5"
+          class="button rsvp-button"
+          target="_blank"
+          >📨 Підтвердити присутність</a
+        >
+        <a
+          href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=NHFkNDdhcTZ1OHVhZWpyNWp1amE2ZTUwZW4gc2Ftb3Rpcy5zdml0bGFuYUBt&amp;tmsrc=samotis.svitlana%40gmail.com"
+          class="button calendar-button"
+          target="_blank"
+          >➕ Додати в календар</a
+        >
       </div>
 
-      <div class="before-countdown">До нашого свята залишилось:</div>
+      <div class="before-countdown">
+        До нашого свята залишилось:
+      </div>
 
       <div class="countdown">
         <div class="countdown-item">
@@ -350,51 +472,96 @@
 
       <div class="divider"></div>
 
-      <div style="margin-top: 10px; color: #cccccc; font-size: 1rem;">
-        
-        <p><strong>Будь ласка, підтвердьте присутність до 1 липня</strong></p>
-        <p>✨ Ми з нетерпінням чекаємо святкування цього особливого дня разом з вами! ✨</p>
+      <div
+        style="
+          margin-top: 10px;
+          color: #cccccc;
+          font-size: 1rem;
+        "
+      >
+        <p>
+          <strong
+            >Будь ласка, підтвердьте присутність
+            до 1 липня</strong
+          >
+        </p>
+        <p>
+          ✨ Ми з нетерпінням чекаємо святкування
+          цього особливого дня разом з вами! ✨
+        </p>
       </div>
     </div>
 
-<script>
-  const music = document.getElementById("background-music");
-  const playButton = document.getElementById("play-music");
+    <script>
+      const music = document.getElementById(
+        "background-music"
+      );
+      const playButton =
+        document.getElementById("play-music");
 
-  playButton.addEventListener("click", () => {
-    music.play();
-    playButton.style.display = "none"; // Ховаємо кнопку після натискання
-  });
+      playButton.addEventListener("click", () => {
+        music.play();
+        playButton.style.display = "none"; // Ховаємо кнопку після натискання
+      });
 
-  // Countdown
-  const daysEl = document.getElementById("days");
-  const hoursEl = document.getElementById("hours");
-  const minutesEl = document.getElementById("minutes");
-  const secondsEl = document.getElementById("seconds");
+      // Countdown
+      const daysEl =
+        document.getElementById("days");
+      const hoursEl =
+        document.getElementById("hours");
+      const minutesEl =
+        document.getElementById("minutes");
+      const secondsEl =
+        document.getElementById("seconds");
 
-  function updateCountdown() {
-    const weddingDate = new Date("July 19, 2025 15:00:00").getTime();
-    const now = new Date().getTime();
-    const distance = weddingDate - now;
+      function updateCountdown() {
+        const weddingDate = new Date(
+          "July 19, 2025 15:00:00"
+        ).getTime();
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
 
-    if (distance < 0) {
-      daysEl.innerText = hoursEl.innerText = minutesEl.innerText = secondsEl.innerText = "00";
-      return;
-    }
+        if (distance < 0) {
+          daysEl.innerText =
+            hoursEl.innerText =
+            minutesEl.innerText =
+            secondsEl.innerText =
+              "00";
+          return;
+        }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        const days = Math.floor(
+          distance / (1000 * 60 * 60 * 24)
+        );
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (distance % (1000 * 60 * 60)) /
+            (1000 * 60)
+        );
+        const seconds = Math.floor(
+          (distance % (1000 * 60)) / 1000
+        );
 
-    daysEl.innerText = String(days).padStart(2, "0");
-    hoursEl.innerText = String(hours).padStart(2, "0");
-    minutesEl.innerText = String(minutes).padStart(2, "0");
-    secondsEl.innerText = String(seconds).padStart(2, "0");
-  }
+        daysEl.innerText = String(days).padStart(
+          2,
+          "0"
+        );
+        hoursEl.innerText = String(
+          hours
+        ).padStart(2, "0");
+        minutesEl.innerText = String(
+          minutes
+        ).padStart(2, "0");
+        secondsEl.innerText = String(
+          seconds
+        ).padStart(2, "0");
+      }
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-</script>
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    </script>
   </body>
 </html>
