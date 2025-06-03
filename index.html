@@ -340,8 +340,7 @@
       </div>
     </div>
 
-    <script>
-      
+<script>
   const music = document.getElementById("background-music");
   const playButton = document.getElementById("play-music");
 
@@ -349,34 +348,36 @@
     music.play();
     playButton.style.display = "none"; // Ховаємо кнопку після натискання
   });
-      const daysEl = document.getElementById("days");
-      const hoursEl = document.getElementById("hours");
-      const minutesEl = document.getElementById("minutes");
-      const secondsEl = document.getElementById("seconds");
 
-      function updateCountdown() {
-        const weddingDate = new Date("July 19, 2025 16:00:00").getTime();
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
+  // Countdown
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
 
-        if (distance < 0) {
-          daysEl.innerText = hoursEl.innerText = minutesEl.innerText = secondsEl.innerText = "00";
-          return;
-        }
+  function updateCountdown() {
+    const weddingDate = new Date("July 19, 2025 16:00:00").getTime();
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    if (distance < 0) {
+      daysEl.innerText = hoursEl.innerText = minutesEl.innerText = secondsEl.innerText = "00";
+      return;
+    }
 
-        daysEl.innerText = String(days).padStart(2, "0");
-        hoursEl.innerText = String(hours).padStart(2, "0");
-        minutesEl.innerText = String(minutes).padStart(2, "0");
-        secondsEl.innerText = String(seconds).padStart(2, "0");
-      }
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    </script>
+    daysEl.innerText = String(days).padStart(2, "0");
+    hoursEl.innerText = String(hours).padStart(2, "0");
+    minutesEl.innerText = String(minutes).padStart(2, "0");
+    secondsEl.innerText = String(seconds).padStart(2, "0");
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
   </body>
 </html>
